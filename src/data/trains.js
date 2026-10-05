@@ -1,205 +1,21 @@
-// Curated database of popular Tamil Nadu & Indian Railway Trains
-// Includes station-by-station timetables, platform numbers, coordinates, and Tamil/English names
+// Curated database for Salem <-> Chennai and Chennai <-> Salem trains
+// Contains station-by-station timetables, platform numbers, coordinates, and bilingual names
 
 export const TRAINS_DATA = [
-  {
-    trainNo: "12636",
-    name: "Vaigai Superfast Express",
-    nameTa: "வைகை அதிவிரைவு வண்டி",
-    type: "Superfast Express",
-    from: "Madurai Junction (MDU)",
-    fromTa: "மதுரை சந்திப்பு",
-    to: "Chennai Egmore (MS)",
-    toTa: "சென்னை எழும்பூர்",
-    departureTime: "07:10",
-    arrivalTime: "14:30",
-    runningDays: ["Daily"],
-    stations: [
-      { code: "MDU", name: "Madurai Junction", nameTa: "மதுரை சந்திப்பு", arr: "Source", dep: "07:10", distance: 0, day: 1, platform: "2", lat: 9.9178, lng: 78.1130 },
-      { code: "SDN", name: "Sholavandan", nameTa: "சோழவந்தான்", arr: "07:33", dep: "07:35", distance: 21, day: 1, platform: "2", lat: 10.0210, lng: 77.9620 },
-      { code: "DG", name: "Dindigul Junction", nameTa: "திண்டுக்கல் சந்திப்பு", arr: "08:03", dep: "08:05", distance: 62, day: 1, platform: "3", lat: 10.3673, lng: 77.9803 },
-      { code: "MPA", name: "Manaparai", nameTa: "மணப்பாறை", arr: "08:44", dep: "08:45", distance: 120, day: 1, platform: "3", lat: 10.6067, lng: 78.4172 },
-      { code: "TPJ", name: "Tiruchchirappalli Junction", nameTa: "திருச்சிராப்பள்ளி சந்திப்பு", arr: "09:15", dep: "09:20", distance: 157, day: 1, platform: "1", lat: 10.7937, lng: 78.6833 },
-      { code: "ALU", name: "Ariyalur", nameTa: "அரியலூர்", arr: "10:14", dep: "10:15", distance: 227, day: 1, platform: "3", lat: 11.1401, lng: 79.0776 },
-      { code: "VRI", name: "Vriddhachalam Junction", nameTa: "விருத்தாசலம் சந்திப்பு", arr: "10:48", dep: "10:50", distance: 280, day: 1, platform: "3", lat: 11.5306, lng: 79.3248 },
-      { code: "VM", name: "Villupuram Junction", nameTa: "விழுப்புரம் சந்திப்பு", arr: "11:40", dep: "11:45", distance: 335, day: 1, platform: "1", lat: 11.9398, lng: 79.4947 },
-      { code: "TMV", name: "Tindivanam", nameTa: "திண்டிவனம்", arr: "12:13", dep: "12:15", distance: 372, day: 1, platform: "2", lat: 12.2289, lng: 79.6542 },
-      { code: "MLMR", name: "Melmaruvathur", nameTa: "மேல்மருவத்தூர்", arr: "12:38", dep: "12:40", distance: 402, day: 1, platform: "1", lat: 12.4332, lng: 79.8290 },
-      { code: "CGL", name: "Chengalpattu Junction", nameTa: "செங்கல்பட்டு சந்திப்பு", arr: "13:13", dep: "13:15", distance: 438, day: 1, platform: "5", lat: 12.6939, lng: 79.9757 },
-      { code: "TBM", name: "Tambaram", nameTa: "தாம்பரம்", arr: "13:43", dep: "13:45", distance: 469, day: 1, platform: "6", lat: 12.9249, lng: 80.1197 },
-      { code: "MBM", name: "Mambalam", nameTa: "மாம்பலம்", arr: "14:04", dep: "14:05", distance: 486, day: 1, platform: "3", lat: 13.0336, lng: 80.2297 },
-      { code: "MS", name: "Chennai Egmore", nameTa: "சென்னை எழும்பூர்", arr: "14:30", dep: "Destination", distance: 493, day: 1, platform: "7", lat: 13.0827, lng: 80.2608 }
-    ]
-  },
-  {
-    trainNo: "12635",
-    name: "Vaigai Superfast Express",
-    nameTa: "வைகை அதிவிரைவு வண்டி",
-    type: "Superfast Express",
-    from: "Chennai Egmore (MS)",
-    fromTa: "சென்னை எழும்பூர்",
-    to: "Madurai Junction (MDU)",
-    toTa: "மதுரை சந்திப்பு",
-    departureTime: "13:50",
-    arrivalTime: "21:15",
-    runningDays: ["Daily"],
-    stations: [
-      { code: "MS", name: "Chennai Egmore", nameTa: "சென்னை எழும்பூர்", arr: "Source", dep: "13:50", distance: 0, day: 1, platform: "4", lat: 13.0827, lng: 80.2608 },
-      { code: "TBM", name: "Tambaram", nameTa: "தாம்பரம்", arr: "14:18", dep: "14:20", distance: 25, day: 1, platform: "8", lat: 12.9249, lng: 80.1197 },
-      { code: "CGL", name: "Chengalpattu Junction", nameTa: "செங்கல்பட்டு சந்திப்பு", arr: "14:48", dep: "14:50", distance: 56, day: 1, platform: "6", lat: 12.6939, lng: 79.9757 },
-      { code: "MLMR", name: "Melmaruvathur", nameTa: "மேல்மருவத்தூர்", arr: "15:18", dep: "15:20", distance: 91, day: 1, platform: "2", lat: 12.4332, lng: 79.8290 },
-      { code: "TMV", name: "Tindivanam", nameTa: "திண்டிவனம்", arr: "15:43", dep: "15:45", distance: 121, day: 1, platform: "3", lat: 12.2289, lng: 79.6542 },
-      { code: "VM", name: "Villupuram Junction", nameTa: "விழுப்புரம் சந்திப்பு", arr: "16:15", dep: "16:20", distance: 159, day: 1, platform: "1", lat: 11.9398, lng: 79.4947 },
-      { code: "VRI", name: "Vriddhachalam Junction", nameTa: "விருத்தாசலம் சந்திப்பு", arr: "17:00", dep: "17:02", distance: 213, day: 1, platform: "3", lat: 11.5306, lng: 79.3248 },
-      { code: "ALU", name: "Ariyalur", nameTa: "அரியலூர்", arr: "17:39", dep: "17:40", distance: 267, day: 1, platform: "2", lat: 11.1401, lng: 79.0776 },
-      { code: "TPJ", name: "Tiruchchirappalli Junction", nameTa: "திருச்சிராப்பள்ளி சந்திப்பு", arr: "18:40", dep: "18:45", distance: 337, day: 1, platform: "1", lat: 10.7937, lng: 78.6833 },
-      { code: "MPA", name: "Manaparai", nameTa: "மணப்பாறை", arr: "19:14", dep: "19:15", distance: 373, day: 1, platform: "1", lat: 10.6067, lng: 78.4172 },
-      { code: "DG", name: "Dindigul Junction", nameTa: "திண்டுக்கல் சந்திப்பு", arr: "19:57", dep: "20:00", distance: 431, day: 1, platform: "4", lat: 10.3673, lng: 77.9803 },
-      { code: "SDN", name: "Sholavandan", nameTa: "சோழவந்தான்", arr: "20:34", dep: "20:35", distance: 472, day: 1, platform: "1", lat: 10.0210, lng: 77.9620 },
-      { code: "MDU", name: "Madurai Junction", nameTa: "மதுரை சந்திப்பு", arr: "21:15", dep: "Destination", distance: 493, day: 1, platform: "2", lat: 9.9178, lng: 78.1130 }
-    ]
-  },
-  {
-    trainNo: "12638",
-    name: "Pandian Superfast Express",
-    nameTa: "பாண்டியன் அதிவிரைவு வண்டி",
-    type: "Superfast Express",
-    from: "Madurai Junction (MDU)",
-    fromTa: "மதுரை சந்திப்பு",
-    to: "Chennai Egmore (MS)",
-    toTa: "சென்னை எழும்பூர்",
-    departureTime: "21:35",
-    arrivalTime: "05:15",
-    runningDays: ["Daily"],
-    stations: [
-      { code: "MDU", name: "Madurai Junction", nameTa: "மதுரை சந்திப்பு", arr: "Source", dep: "21:35", distance: 0, day: 1, platform: "1", lat: 9.9178, lng: 78.1130 },
-      { code: "KQN", name: "Kodaikanal Road", nameTa: "கொடைக்கானல் ரோடு", arr: "22:04", dep: "22:05", distance: 40, day: 1, platform: "1", lat: 10.1798, lng: 77.9157 },
-      { code: "DG", name: "Dindigul Junction", nameTa: "திண்டுக்கல் சந்திப்பு", arr: "22:27", dep: "22:30", distance: 62, day: 1, platform: "3", lat: 10.3673, lng: 77.9803 },
-      { code: "TPJ", name: "Tiruchchirappalli Junction", nameTa: "திருச்சிராப்பள்ளி சந்திப்பு", arr: "23:40", dep: "23:45", distance: 157, day: 1, platform: "1", lat: 10.7937, lng: 78.6833 },
-      { code: "VRI", name: "Vriddhachalam Junction", nameTa: "விருத்தாசலம் சந்திப்பு", arr: "01:23", dep: "01:25", distance: 280, day: 2, platform: "3", lat: 11.5306, lng: 79.3248 },
-      { code: "VM", name: "Villupuram Junction", nameTa: "விழுப்புரம் சந்திப்பு", arr: "02:25", dep: "02:30", distance: 335, day: 2, platform: "1", lat: 11.9398, lng: 79.4947 },
-      { code: "CGL", name: "Chengalpattu Junction", nameTa: "செங்கல்பட்டு சந்திப்பு", arr: "03:58", dep: "04:00", distance: 438, day: 2, platform: "5", lat: 12.6939, lng: 79.9757 },
-      { code: "TBM", name: "Tambaram", nameTa: "தாம்பரம்", arr: "04:28", dep: "04:30", distance: 469, day: 2, platform: "6", lat: 12.9249, lng: 80.1197 },
-      { code: "MBM", name: "Mambalam", nameTa: "மாம்பலம்", arr: "04:49", dep: "04:50", distance: 486, day: 2, platform: "3", lat: 13.0336, lng: 80.2297 },
-      { code: "MS", name: "Chennai Egmore", nameTa: "சென்னை எழும்பூர்", arr: "05:15", dep: "Destination", distance: 493, day: 2, platform: "4", lat: 13.0827, lng: 80.2608 }
-    ]
-  },
-  {
-    trainNo: "12637",
-    name: "Pandian Superfast Express",
-    nameTa: "பாண்டியன் அதிவிரைவு வண்டி",
-    type: "Superfast Express",
-    from: "Chennai Egmore (MS)",
-    fromTa: "சென்னை எழும்பூர்",
-    to: "Madurai Junction (MDU)",
-    toTa: "மதுரை சந்திப்பு",
-    departureTime: "21:40",
-    arrivalTime: "05:35",
-    runningDays: ["Daily"],
-    stations: [
-      { code: "MS", name: "Chennai Egmore", nameTa: "சென்னை எழும்பூர்", arr: "Source", dep: "21:40", distance: 0, day: 1, platform: "4", lat: 13.0827, lng: 80.2608 },
-      { code: "TBM", name: "Tambaram", nameTa: "தாம்பரம்", arr: "22:08", dep: "22:10", distance: 25, day: 1, platform: "8", lat: 12.9249, lng: 80.1197 },
-      { code: "CGL", name: "Chengalpattu Junction", nameTa: "செங்கல்பட்டு சந்திப்பு", arr: "22:38", dep: "22:40", distance: 56, day: 1, platform: "6", lat: 12.6939, lng: 79.9757 },
-      { code: "VM", name: "Villupuram Junction", nameTa: "விழுப்புரம் சந்திப்பு", arr: "00:05", dep: "00:10", distance: 159, day: 2, platform: "1", lat: 11.9398, lng: 79.4947 },
-      { code: "VRI", name: "Vriddhachalam Junction", nameTa: "விருத்தாசலம் சந்திப்பு", arr: "00:50", dep: "00:52", distance: 213, day: 2, platform: "3", lat: 11.5306, lng: 79.3248 },
-      { code: "TPJ", name: "Tiruchchirappalli Junction", nameTa: "திருச்சிராப்பள்ளி சந்திப்பு", arr: "02:40", dep: "02:45", distance: 337, day: 2, platform: "1", lat: 10.7937, lng: 78.6833 },
-      { code: "DG", name: "Dindigul Junction", nameTa: "திண்டுக்கல் சந்திப்பு", arr: "04:12", dep: "04:15", distance: 431, day: 2, platform: "4", lat: 10.3673, lng: 77.9803 },
-      { code: "KQN", name: "Kodaikanal Road", nameTa: "கொடைக்கானல் ரோடு", arr: "04:34", dep: "04:35", distance: 453, day: 2, platform: "1", lat: 10.1798, lng: 77.9157 },
-      { code: "MDU", name: "Madurai Junction", nameTa: "மதுரை சந்திப்பு", arr: "05:35", dep: "Destination", distance: 493, day: 2, platform: "3", lat: 9.9178, lng: 78.1130 }
-    ]
-  },
-  {
-    trainNo: "12606",
-    name: "Pallavan Superfast Express",
-    nameTa: "பல்லவன் அதிவிரைவு வண்டி",
-    type: "Superfast Express",
-    from: "Karaikkudi Junction (KKDI)",
-    fromTa: "காரைக்குடி சந்திப்பு",
-    to: "Chennai Egmore (MS)",
-    toTa: "சென்னை எழும்பூர்",
-    departureTime: "05:35",
-    arrivalTime: "12:15",
-    runningDays: ["Daily"],
-    stations: [
-      { code: "KKDI", name: "Karaikkudi Junction", nameTa: "காரைக்குடி சந்திப்பு", arr: "Source", dep: "05:35", distance: 0, day: 1, platform: "1", lat: 10.0631, lng: 78.7842 },
-      { code: "PDKT", name: "Pudukkottai", nameTa: "புதுக்கோட்டை", arr: "06:04", dep: "06:05", distance: 37, day: 1, platform: "1", lat: 10.3833, lng: 78.8167 },
-      { code: "TPJ", name: "Tiruchchirappalli Junction", nameTa: "திருச்சிராப்பள்ளி சந்திப்பு", arr: "06:50", dep: "06:55", distance: 90, day: 1, platform: "1", lat: 10.7937, lng: 78.6833 },
-      { code: "SRGM", name: "Srirangam", nameTa: "ஸ்ரீரங்கம்", arr: "07:11", dep: "07:13", distance: 101, day: 1, platform: "1", lat: 10.8624, lng: 78.6976 },
-      { code: "LLI", name: "Lalgudi", nameTa: "லால்குடி", arr: "07:27", dep: "07:28", distance: 116, day: 1, platform: "2", lat: 10.9080, lng: 78.7990 },
-      { code: "ALU", name: "Ariyalur", nameTa: "அரியலூர்", arr: "07:59", dep: "08:00", distance: 160, day: 1, platform: "3", lat: 11.1401, lng: 79.0776 },
-      { code: "VRI", name: "Vriddhachalam Junction", nameTa: "விருத்தாசலம் சந்திப்பு", arr: "08:33", dep: "08:35", distance: 213, day: 1, platform: "3", lat: 11.5306, lng: 79.3248 },
-      { code: "VM", name: "Villupuram Junction", nameTa: "விழுப்புரம் சந்திப்பு", arr: "09:25", dep: "09:30", distance: 268, day: 1, platform: "1", lat: 11.9398, lng: 79.4947 },
-      { code: "MLMR", name: "Melmaruvathur", nameTa: "மேல்மருவத்தூர்", arr: "10:23", dep: "10:25", distance: 335, day: 1, platform: "1", lat: 12.4332, lng: 79.8290 },
-      { code: "CGL", name: "Chengalpattu Junction", nameTa: "செங்கல்பட்டு சந்திப்பு", arr: "10:58", dep: "11:00", distance: 371, day: 1, platform: "5", lat: 12.6939, lng: 79.9757 },
-      { code: "TBM", name: "Tambaram", nameTa: "தாம்பரம்", arr: "11:28", dep: "11:30", distance: 402, day: 1, platform: "6", lat: 12.9249, lng: 80.1197 },
-      { code: "MBM", name: "Mambalam", nameTa: "மாம்பலம்", arr: "11:49", dep: "11:50", distance: 419, day: 1, platform: "3", lat: 13.0336, lng: 80.2297 },
-      { code: "MS", name: "Chennai Egmore", nameTa: "சென்னை எழும்பூர்", arr: "12:15", dep: "Destination", distance: 426, day: 1, platform: "5", lat: 13.0827, lng: 80.2608 }
-    ]
-  },
-  {
-    trainNo: "12632",
-    name: "Nellai Superfast Express",
-    nameTa: "நெல்லை அதிவிரைவு வண்டி",
-    type: "Superfast Express",
-    from: "Tirunelveli Junction (TEN)",
-    fromTa: "திருநெல்வேலி சந்திப்பு",
-    to: "Chennai Egmore (MS)",
-    toTa: "சென்னை எழும்பூர்",
-    departureTime: "20:05",
-    arrivalTime: "07:00",
-    runningDays: ["Daily"],
-    stations: [
-      { code: "TEN", name: "Tirunelveli Junction", nameTa: "திருநெல்வேலி சந்திப்பு", arr: "Source", dep: "20:05", distance: 0, day: 1, platform: "1", lat: 8.7289, lng: 77.7281 },
-      { code: "CVP", name: "Kovilpatti", nameTa: "கோவில்பட்டி", arr: "20:53", dep: "20:55", distance: 65, day: 1, platform: "2", lat: 9.1764, lng: 77.8687 },
-      { code: "SRT", name: "Satur", nameTa: "சாத்தூர்", arr: "21:13", dep: "21:15", distance: 87, day: 1, platform: "1", lat: 9.3562, lng: 77.9255 },
-      { code: "VPT", name: "Virudhunagar Junction", nameTa: "விருதுநகர் சந்திப்பு", arr: "21:38", dep: "21:40", distance: 114, day: 1, platform: "2", lat: 9.5872, lng: 77.9620 },
-      { code: "MDU", name: "Madurai Junction", nameTa: "மதுரை சந்திப்பு", arr: "22:30", dep: "22:35", distance: 157, day: 1, platform: "2", lat: 9.9178, lng: 78.1130 },
-      { code: "DG", name: "Dindigul Junction", nameTa: "திண்டுக்கல் சந்திப்பு", arr: "23:32", dep: "23:35", distance: 219, day: 1, platform: "3", lat: 10.3673, lng: 77.9803 },
-      { code: "TPJ", name: "Tiruchchirappalli Junction", nameTa: "திருச்சிராப்பள்ளி சந்திப்பு", arr: "00:55", dep: "01:00", distance: 314, day: 2, platform: "1", lat: 10.7937, lng: 78.6833 },
-      { code: "VRI", name: "Vriddhachalam Junction", nameTa: "விருத்தாசலம் சந்திப்பு", arr: "02:48", dep: "02:50", distance: 437, day: 2, platform: "3", lat: 11.5306, lng: 79.3248 },
-      { code: "VM", name: "Villupuram Junction", nameTa: "விழுப்புரம் சந்திப்பு", arr: "03:55", dep: "04:00", distance: 492, day: 2, platform: "1", lat: 11.9398, lng: 79.4947 },
-      { code: "TMV", name: "Tindivanam", nameTa: "திண்டிவனம்", arr: "04:33", dep: "04:35", distance: 529, day: 2, platform: "2", lat: 12.2289, lng: 79.6542 },
-      { code: "MLMR", name: "Melmaruvathur", nameTa: "மேல்மருவத்தூர்", arr: "04:58", dep: "05:00", distance: 559, day: 2, platform: "1", lat: 12.4332, lng: 79.8290 },
-      { code: "CGL", name: "Chengalpattu Junction", nameTa: "செங்கல்பட்டு சந்திப்பு", arr: "05:38", dep: "05:40", distance: 595, day: 2, platform: "5", lat: 12.6939, lng: 79.9757 },
-      { code: "TBM", name: "Tambaram", nameTa: "தாம்பரம்", arr: "06:08", dep: "06:10", distance: 626, day: 2, platform: "6", lat: 12.9249, lng: 80.1197 },
-      { code: "MBM", name: "Mambalam", nameTa: "மாம்பலம்", arr: "06:29", dep: "06:30", distance: 643, day: 2, platform: "3", lat: 13.0336, lng: 80.2297 },
-      { code: "MS", name: "Chennai Egmore", nameTa: "சென்னை எழும்பூர்", arr: "07:00", dep: "Destination", distance: 650, day: 2, platform: "7", lat: 13.0827, lng: 80.2608 }
-    ]
-  },
-  {
-    trainNo: "12654",
-    name: "Rockfort Superfast Express",
-    nameTa: "மலைக்கோட்டை அதிவிரைவு வண்டி",
-    type: "Superfast Express",
-    from: "Tiruchchirappalli Junction (TPJ)",
-    fromTa: "திருச்சிராப்பள்ளி சந்திப்பு",
-    to: "Chennai Egmore (MS)",
-    toTa: "சென்னை எழும்பூர்",
-    departureTime: "22:50",
-    arrivalTime: "04:10",
-    runningDays: ["Daily"],
-    stations: [
-      { code: "TPJ", name: "Tiruchchirappalli Junction", nameTa: "திருச்சிராப்பள்ளி சந்திப்பு", arr: "Source", dep: "22:50", distance: 0, day: 1, platform: "1", lat: 10.7937, lng: 78.6833 },
-      { code: "SRGM", name: "Srirangam", nameTa: "ஸ்ரீரங்கம்", arr: "23:08", dep: "23:10", distance: 11, day: 1, platform: "1", lat: 10.8624, lng: 78.6976 },
-      { code: "ALU", name: "Ariyalur", nameTa: "அரியலூர்", arr: "23:55", dep: "23:56", distance: 70, day: 1, platform: "2", lat: 11.1401, lng: 79.0776 },
-      { code: "VRI", name: "Vriddhachalam Junction", nameTa: "விருத்தாசலம் சந்திப்பு", arr: "00:33", dep: "00:35", distance: 123, day: 2, platform: "3", lat: 11.5306, lng: 79.3248 },
-      { code: "VM", name: "Villupuram Junction", nameTa: "விழுப்புரம் சந்திப்பு", arr: "01:25", dep: "01:30", distance: 178, day: 2, platform: "1", lat: 11.9398, lng: 79.4947 },
-      { code: "CGL", name: "Chengalpattu Junction", nameTa: "செங்கல்பட்டு சந்திப்பு", arr: "02:58", dep: "03:00", distance: 281, day: 2, platform: "5", lat: 12.6939, lng: 79.9757 },
-      { code: "TBM", name: "Tambaram", nameTa: "தாம்பரம்", arr: "03:28", dep: "03:30", distance: 312, day: 2, platform: "6", lat: 12.9249, lng: 80.1197 },
-      { code: "MBM", name: "Mambalam", nameTa: "மாம்பலம்", arr: "03:49", dep: "03:50", distance: 329, day: 2, platform: "3", lat: 13.0336, lng: 80.2297 },
-      { code: "MS", name: "Chennai Egmore", nameTa: "சென்னை எழும்பூர்", arr: "04:10", dep: "Destination", distance: 336, day: 2, platform: "5", lat: 13.0827, lng: 80.2608 }
-    ]
-  },
+  // 1. 12676 Kovai Superfast Express (Salem -> Chennai Central)
   {
     trainNo: "12676",
     name: "Kovai Superfast Express",
     nameTa: "கோவை அதிவிரைவு வண்டி",
     type: "Superfast Express",
-    from: "Coimbatore Junction (CBE)",
-    fromTa: "கோயம்புத்தூர் சந்திப்பு",
+    direction: "SA_TO_MAS",
+    directionLabel: "Salem ➔ Chennai",
+    directionLabelTa: "சேலம் ➔ சென்னை",
+    from: "Coimbatore / Salem (SA)",
+    fromTa: "சேலம் சந்திப்பு (SA)",
     to: "MGR Chennai Central (MAS)",
-    toTa: "சென்னை சென்ட்ரல்",
-    departureTime: "15:15",
+    toTa: "சென்னை சென்ட்ரல் (MAS)",
+    departureTime: "17:45",
     arrivalTime: "22:50",
     runningDays: ["Daily"],
     stations: [
@@ -216,70 +32,247 @@ export const TRAINS_DATA = [
       { code: "MAS", name: "MGR Chennai Central", nameTa: "சென்னை சென்ட்ரல்", arr: "22:50", dep: "Destination", distance: 495, day: 1, platform: "8", lat: 13.0827, lng: 80.2707 }
     ]
   },
+
+  // 2. 22650 Yercaud Superfast Express (Salem -> Chennai Central)
   {
-    trainNo: "20608",
-    name: "Vande Bharat Express",
-    nameTa: "வந்தே பாரத் விரைவு வண்டி",
-    type: "Vande Bharat Express",
-    from: "Tirunelveli Junction (TEN)",
-    fromTa: "திருநெல்வேலி சந்திப்பு",
-    to: "Chennai Egmore (MS)",
-    toTa: "சென்னை எழும்பூர்",
-    departureTime: "06:00",
-    arrivalTime: "13:50",
-    runningDays: ["Mon", "Wed", "Thu", "Fri", "Sat", "Sun"],
-    stations: [
-      { code: "TEN", name: "Tirunelveli Junction", nameTa: "திருநெல்வேலி சந்திப்பு", arr: "Source", dep: "06:00", distance: 0, day: 1, platform: "1", lat: 8.7289, lng: 77.7281 },
-      { code: "VPT", name: "Virudhunagar Junction", nameTa: "விருதுநகர் சந்திப்பு", arr: "07:13", dep: "07:15", distance: 114, day: 1, platform: "2", lat: 9.5872, lng: 77.9620 },
-      { code: "MDU", name: "Madurai Junction", nameTa: "மதுரை சந்திப்பு", arr: "07:50", dep: "07:55", distance: 157, day: 1, platform: "2", lat: 9.9178, lng: 78.1130 },
-      { code: "DG", name: "Dindigul Junction", nameTa: "திண்டுக்கல் சந்திப்பு", arr: "08:40", dep: "08:42", distance: 219, day: 1, platform: "3", lat: 10.3673, lng: 77.9803 },
-      { code: "TPJ", name: "Tiruchchirappalli Junction", nameTa: "திருச்சிராப்பள்ளி சந்திப்பு", arr: "09:50", dep: "09:55", distance: 314, day: 1, platform: "1", lat: 10.7937, lng: 78.6833 },
-      { code: "VM", name: "Villupuram Junction", nameTa: "விழுப்புரம் சந்திப்பு", arr: "11:54", dep: "11:56", distance: 492, day: 1, platform: "1", lat: 11.9398, lng: 79.4947 },
-      { code: "TBM", name: "Tambaram", nameTa: "தாம்பரம்", arr: "13:13", dep: "13:15", distance: 626, day: 1, platform: "6", lat: 12.9249, lng: 80.1197 },
-      { code: "MS", name: "Chennai Egmore", nameTa: "சென்னை எழும்பூர்", arr: "13:50", dep: "Destination", distance: 650, day: 1, platform: "1", lat: 13.0827, lng: 80.2608 }
-    ]
-  },
-  {
-    trainNo: "12634",
-    name: "Kanyakumari Superfast Express",
-    nameTa: "கன்னியாகுமரி அதிவிரைவு வண்டி",
+    trainNo: "22650",
+    name: "Yercaud Superfast Express",
+    nameTa: "ஏற்காடு அதிவிரைவு வண்டி",
     type: "Superfast Express",
-    from: "Kanyakumari (CAPE)",
-    fromTa: "கன்னியாகுமரி",
-    to: "Chennai Egmore (MS)",
-    toTa: "சென்னை எழும்பூர்",
-    departureTime: "17:50",
-    arrivalTime: "06:10",
+    direction: "SA_TO_MAS",
+    directionLabel: "Salem ➔ Chennai",
+    directionLabelTa: "சேலம் ➔ சென்னை",
+    from: "Salem Junction (SA)",
+    fromTa: "சேலம் சந்திப்பு (SA)",
+    to: "MGR Chennai Central (MAS)",
+    toTa: "சென்னை சென்ட்ரல் (MAS)",
+    departureTime: "22:00",
+    arrivalTime: "03:55",
     runningDays: ["Daily"],
     stations: [
-      { code: "CAPE", name: "Kanyakumari", nameTa: "கன்னியாகுமரி", arr: "Source", dep: "17:50", distance: 0, day: 1, platform: "1", lat: 8.0883, lng: 77.5385 },
-      { code: "NCJ", name: "Nagercoil Junction", nameTa: "நாகர்கோவில் சந்திப்பு", arr: "18:10", dep: "18:15", distance: 16, day: 1, platform: "2", lat: 8.1833, lng: 77.4333 },
-      { code: "VLY", name: "Valliyur", nameTa: "வள்ளியூர்", arr: "18:44", dep: "18:45", distance: 47, day: 1, platform: "1", lat: 8.3833, lng: 77.6167 },
-      { code: "TEN", name: "Tirunelveli Junction", nameTa: "திருநெல்வேலி சந்திப்பு", arr: "19:30", dep: "19:35", distance: 89, day: 1, platform: "1", lat: 8.7289, lng: 77.7281 },
-      { code: "CVP", name: "Kovilpatti", nameTa: "கோவில்பட்டி", arr: "20:23", dep: "20:25", distance: 154, day: 1, platform: "2", lat: 9.1764, lng: 77.8687 },
-      { code: "VPT", name: "Virudhunagar Junction", nameTa: "விருதுநகர் சந்திப்பு", arr: "21:08", dep: "21:10", distance: 203, day: 1, platform: "2", lat: 9.5872, lng: 77.9620 },
-      { code: "MDU", name: "Madurai Junction", nameTa: "மதுரை சந்திப்பு", arr: "22:00", dep: "22:05", distance: 246, day: 1, platform: "2", lat: 9.9178, lng: 78.1130 },
-      { code: "DG", name: "Dindigul Junction", nameTa: "திண்டுக்கல் சந்திப்பு", arr: "23:02", dep: "23:05", distance: 308, day: 1, platform: "3", lat: 10.3673, lng: 77.9803 },
-      { code: "TPJ", name: "Tiruchchirappalli Junction", nameTa: "திருச்சிராப்பள்ளி சந்திப்பு", arr: "00:30", dep: "00:35", distance: 403, day: 2, platform: "1", lat: 10.7937, lng: 78.6833 },
-      { code: "VRI", name: "Vriddhachalam Junction", nameTa: "விருத்தாசலம் சந்திப்பு", arr: "02:18", dep: "02:20", distance: 526, day: 2, platform: "3", lat: 11.5306, lng: 79.3248 },
-      { code: "VM", name: "Villupuram Junction", nameTa: "விழுப்புரம் சந்திப்பு", arr: "03:20", dep: "03:25", distance: 581, day: 2, platform: "1", lat: 11.9398, lng: 79.4947 },
-      { code: "TMV", name: "Tindivanam", nameTa: "திண்டிவனம்", arr: "03:58", dep: "04:00", distance: 618, day: 2, platform: "2", lat: 12.2289, lng: 79.6542 },
-      { code: "CGL", name: "Chengalpattu Junction", nameTa: "செங்கல்பட்டு சந்திப்பு", arr: "04:58", dep: "05:00", distance: 684, day: 2, platform: "5", lat: 12.6939, lng: 79.9757 },
-      { code: "TBM", name: "Tambaram", nameTa: "தாம்பரம்", arr: "05:28", dep: "05:30", distance: 715, day: 2, platform: "6", lat: 12.9249, lng: 80.1197 },
-      { code: "MBM", name: "Mambalam", nameTa: "மாம்பலம்", arr: "05:49", dep: "05:50", distance: 732, day: 2, platform: "3", lat: 13.0336, lng: 80.2297 },
-      { code: "MS", name: "Chennai Egmore", nameTa: "சென்னை எழும்பூர்", arr: "06:10", dep: "Destination", distance: 739, day: 2, platform: "4", lat: 13.0827, lng: 80.2608 }
+      { code: "ED", name: "Erode Junction", nameTa: "ஈரோடு சந்திப்பு", arr: "Source", dep: "21:00", distance: 0, day: 1, platform: "3", lat: 11.3410, lng: 77.7172 },
+      { code: "SGE", name: "Sankaridurg", nameTa: "சங்ககிரி", arr: "21:24", dep: "21:25", distance: 21, day: 1, platform: "1", lat: 11.4880, lng: 77.8760 },
+      { code: "SA", name: "Salem Junction", nameTa: "சேலம் சந்திப்பு", arr: "21:55", dep: "22:00", distance: 60, day: 1, platform: "5", lat: 11.6643, lng: 78.1460 },
+      { code: "BQI", name: "Bommidi", nameTa: "பொம்மிடி", arr: "22:44", dep: "22:45", distance: 103, day: 1, platform: "2", lat: 11.9050, lng: 78.2910 },
+      { code: "MAP", name: "Morappur", nameTa: "மொரப்பூர்", arr: "23:04", dep: "23:05", distance: 126, day: 1, platform: "2", lat: 12.0620, lng: 78.4350 },
+      { code: "SLY", name: "Samalpatti", nameTa: "சமல்பட்டி", arr: "23:24", dep: "23:25", distance: 149, day: 1, platform: "2", lat: 12.3330, lng: 78.4720 },
+      { code: "TPT", name: "Tirupattur", nameTa: "திருப்பத்தூர்", arr: "23:44", dep: "23:45", distance: 172, day: 1, platform: "1", lat: 12.4930, lng: 78.5670 },
+      { code: "JTJ", name: "Jolarpettai Junction", nameTa: "ஜோலார்பேட்டை சந்திப்பு", arr: "00:08", dep: "00:10", distance: 180, day: 2, platform: "4", lat: 12.5694, lng: 78.5830 },
+      { code: "VN", name: "Vaniyambadi", nameTa: "வாணியம்பாடி", arr: "00:23", dep: "00:25", distance: 196, day: 2, platform: "2", lat: 12.6860, lng: 78.6180 },
+      { code: "AB", name: "Ambur", nameTa: "ஆம்பூர்", arr: "00:38", dep: "00:40", distance: 212, day: 2, platform: "2", lat: 12.7904, lng: 78.7166 },
+      { code: "KPD", name: "Katpadi Junction", nameTa: "காட்பாடி சந்திப்பு", arr: "01:28", dep: "01:30", distance: 264, day: 2, platform: "2", lat: 12.9698, lng: 79.1352 },
+      { code: "WJR", name: "Walajah Road", nameTa: "வாலாஜா ரோடு", arr: "01:48", dep: "01:50", distance: 289, day: 2, platform: "2", lat: 12.9660, lng: 79.3620 },
+      { code: "AJJ", name: "Arakkonam Junction", nameTa: "அரக்கோணம் சந்திப்பு", arr: "02:18", dep: "02:20", distance: 325, day: 2, platform: "2", lat: 13.0784, lng: 79.6677 },
+      { code: "PER", name: "Perambur", nameTa: "பெரம்பூர்", arr: "03:13", dep: "03:15", distance: 389, day: 2, platform: "1", lat: 13.1075, lng: 80.2335 },
+      { code: "MAS", name: "MGR Chennai Central", nameTa: "சென்னை சென்ட்ரல்", arr: "03:55", dep: "Destination", distance: 394, day: 2, platform: "11", lat: 13.0827, lng: 80.2707 }
     ]
   },
+
+  // 3. 12680 MAS Intercity Superfast Express (Salem -> Chennai Central)
+  {
+    trainNo: "12680",
+    name: "Coimbatore - Chennai Intercity SF",
+    nameTa: "சென்னை இன்டர்சிட்டி அதிவிரைவு",
+    type: "Superfast Express",
+    direction: "SA_TO_MAS",
+    directionLabel: "Salem ➔ Chennai",
+    directionLabelTa: "சேலம் ➔ சென்னை",
+    from: "Salem Junction (SA)",
+    fromTa: "சேலம் சந்திப்பு (SA)",
+    to: "MGR Chennai Central (MAS)",
+    toTa: "சென்னை சென்ட்ரல் (MAS)",
+    departureTime: "08:50",
+    arrivalTime: "13:50",
+    runningDays: ["Daily"],
+    stations: [
+      { code: "CBE", name: "Coimbatore Junction", nameTa: "கோயம்புத்தூர் சந்திப்பு", arr: "Source", dep: "06:20", distance: 0, day: 1, platform: "2", lat: 11.0018, lng: 76.9628 },
+      { code: "TUP", name: "Tiruppur", nameTa: "திருப்பூர்", arr: "07:03", dep: "07:05", distance: 50, day: 1, platform: "2", lat: 11.1085, lng: 77.3411 },
+      { code: "ED", name: "Erode Junction", nameTa: "ஈரோடு சந்திப்பு", arr: "07:50", dep: "07:55", distance: 101, day: 1, platform: "1", lat: 11.3410, lng: 77.7172 },
+      { code: "SA", name: "Salem Junction", nameTa: "சேலம் சந்திப்பு", arr: "08:47", dep: "08:50", distance: 160, day: 1, platform: "4", lat: 11.6643, lng: 78.1460 },
+      { code: "BQI", name: "Bommidi", nameTa: "பொம்மிடி", arr: "09:34", dep: "09:35", distance: 203, day: 1, platform: "2", lat: 11.9050, lng: 78.2910 },
+      { code: "MAP", name: "Morappur", nameTa: "மொரப்பூர்", arr: "09:54", dep: "09:55", distance: 226, day: 1, platform: "2", lat: 12.0620, lng: 78.4350 },
+      { code: "SLY", name: "Samalpatti", nameTa: "சமல்பட்டி", arr: "10:14", dep: "10:15", distance: 249, day: 1, platform: "2", lat: 12.3330, lng: 78.4720 },
+      { code: "JTJ", name: "Jolarpettai Junction", nameTa: "ஜோலார்பேட்டை சந்திப்பு", arr: "10:48", dep: "10:50", distance: 281, day: 1, platform: "4", lat: 12.5694, lng: 78.5830 },
+      { code: "KPD", name: "Katpadi Junction", nameTa: "காட்பாடி சந்திப்பு", arr: "11:58", dep: "12:00", distance: 365, day: 1, platform: "2", lat: 12.9698, lng: 79.1352 },
+      { code: "AJJ", name: "Arakkonam Junction", nameTa: "அரக்கோணம் சந்திப்பு", arr: "12:48", dep: "12:50", distance: 426, day: 1, platform: "2", lat: 13.0784, lng: 79.6677 },
+      { code: "PER", name: "Perambur", nameTa: "பெரம்பூர்", arr: "13:38", dep: "13:40", distance: 490, day: 1, platform: "1", lat: 13.1075, lng: 80.2335 },
+      { code: "MAS", name: "MGR Chennai Central", nameTa: "சென்னை சென்ட்ரல்", arr: "13:50", dep: "Destination", distance: 495, day: 1, platform: "1", lat: 13.0827, lng: 80.2707 }
+    ]
+  },
+
+  // 4. 12675 Kovai Superfast Express (Chennai Central -> Salem)
+  {
+    trainNo: "12675",
+    name: "Kovai Superfast Express",
+    nameTa: "கோவை அதிவிரைவு வண்டி",
+    type: "Superfast Express",
+    direction: "MAS_TO_SA",
+    directionLabel: "Chennai ➔ Salem",
+    directionLabelTa: "சென்னை ➔ சேலம்",
+    from: "MGR Chennai Central (MAS)",
+    fromTa: "சென்னை சென்ட்ரல் (MAS)",
+    to: "Salem / Coimbatore (SA)",
+    toTa: "சேலம் சந்திப்பு (SA)",
+    departureTime: "06:10",
+    arrivalTime: "11:05",
+    runningDays: ["Daily"],
+    stations: [
+      { code: "MAS", name: "MGR Chennai Central", nameTa: "சென்னை சென்ட்ரல்", arr: "Source", dep: "06:10", distance: 0, day: 1, platform: "10", lat: 13.0827, lng: 80.2707 },
+      { code: "PER", name: "Perambur", nameTa: "பெரம்பூர்", arr: "06:23", dep: "06:25", distance: 5, day: 1, platform: "2", lat: 13.1075, lng: 80.2335 },
+      { code: "AJJ", name: "Arakkonam Junction", nameTa: "அரக்கோணம் சந்திப்பு", arr: "07:08", dep: "07:10", distance: 69, day: 1, platform: "1", lat: 13.0784, lng: 79.6677 },
+      { code: "WJR", name: "Walajah Road", nameTa: "வாலாஜா ரோடு", arr: "07:33", dep: "07:35", distance: 105, day: 1, platform: "1", lat: 12.9660, lng: 79.3620 },
+      { code: "KPD", name: "Katpadi Junction", nameTa: "காட்பாடி சந்திப்பு", arr: "07:58", dep: "08:00", distance: 130, day: 1, platform: "1", lat: 12.9698, lng: 79.1352 },
+      { code: "AB", name: "Ambur", nameTa: "ஆம்பூர்", arr: "08:38", dep: "08:40", distance: 182, day: 1, platform: "3", lat: 12.7904, lng: 78.7166 },
+      { code: "JTJ", name: "Jolarpettai Junction", nameTa: "ஜோலார்பேட்டை சந்திப்பு", arr: "09:18", dep: "09:20", distance: 214, day: 1, platform: "1", lat: 12.5694, lng: 78.5830 },
+      { code: "MAP", name: "Morappur", nameTa: "மொரப்பூர்", arr: "10:04", dep: "10:05", distance: 269, day: 1, platform: "2", lat: 12.0620, lng: 78.4350 },
+      { code: "SA", name: "Salem Junction", nameTa: "சேலம் சந்திப்பு", arr: "11:02", dep: "11:05", distance: 334, day: 1, platform: "4", lat: 11.6643, lng: 78.1460 },
+      { code: "ED", name: "Erode Junction", nameTa: "ஈரோடு சந்திப்பு", arr: "12:05", dep: "12:10", distance: 394, day: 1, platform: "2", lat: 11.3410, lng: 77.7172 },
+      { code: "TUP", name: "Tiruppur", nameTa: "திருப்பூர்", arr: "12:53", dep: "12:55", distance: 444, day: 1, platform: "1", lat: 11.1085, lng: 77.3411 },
+      { code: "CBE", name: "Coimbatore Junction", nameTa: "கோயம்புத்தூர் சந்திப்பு", arr: "14:05", dep: "Destination", distance: 495, day: 1, platform: "3", lat: 11.0018, lng: 76.9628 }
+    ]
+  },
+
+  // 5. 12679 CBE Intercity Superfast Express (Chennai Central -> Salem)
+  {
+    trainNo: "12679",
+    name: "Coimbatore Intercity SF Express",
+    nameTa: "கோவை இன்டர்சிட்டி அதிவிரைவு",
+    type: "Superfast Express",
+    direction: "MAS_TO_SA",
+    directionLabel: "Chennai ➔ Salem",
+    directionLabelTa: "சென்னை ➔ சேலம்",
+    from: "MGR Chennai Central (MAS)",
+    fromTa: "சென்னை சென்ட்ரல் (MAS)",
+    to: "Salem / Coimbatore (SA)",
+    toTa: "சேலம் சந்திப்பு (SA)",
+    departureTime: "14:35",
+    arrivalTime: "19:10",
+    runningDays: ["Daily"],
+    stations: [
+      { code: "MAS", name: "MGR Chennai Central", nameTa: "சென்னை சென்ட்ரல்", arr: "Source", dep: "14:35", distance: 0, day: 1, platform: "8", lat: 13.0827, lng: 80.2707 },
+      { code: "AJJ", name: "Arakkonam Junction", nameTa: "அரக்கோணம் சந்திப்பு", arr: "15:28", dep: "15:30", distance: 69, day: 1, platform: "1", lat: 13.0784, lng: 79.6677 },
+      { code: "KPD", name: "Katpadi Junction", nameTa: "காட்பாடி சந்திப்பு", arr: "16:13", dep: "16:15", distance: 130, day: 1, platform: "1", lat: 12.9698, lng: 79.1352 },
+      { code: "AB", name: "Ambur", nameTa: "ஆம்பூர்", arr: "16:53", dep: "16:55", distance: 182, day: 1, platform: "3", lat: 12.7904, lng: 78.7166 },
+      { code: "JTJ", name: "Jolarpettai Junction", nameTa: "ஜோலார்பேட்டை சந்திப்பு", arr: "17:28", dep: "17:30", distance: 214, day: 1, platform: "1", lat: 12.5694, lng: 78.5830 },
+      { code: "MAP", name: "Morappur", nameTa: "மொரப்பூர்", arr: "18:09", dep: "18:10", distance: 269, day: 1, platform: "2", lat: 12.0620, lng: 78.4350 },
+      { code: "BQI", name: "Bommidi", nameTa: "பொம்மிடி", arr: "18:29", dep: "18:30", distance: 292, day: 1, platform: "1", lat: 11.9050, lng: 78.2910 },
+      { code: "SA", name: "Salem Junction", nameTa: "சேலம் சந்திப்பு", arr: "19:07", dep: "19:10", distance: 334, day: 1, platform: "4", lat: 11.6643, lng: 78.1460 },
+      { code: "ED", name: "Erode Junction", nameTa: "ஈரோடு சந்திப்பு", arr: "20:10", dep: "20:15", distance: 394, day: 1, platform: "2", lat: 11.3410, lng: 77.7172 },
+      { code: "TUP", name: "Tiruppur", nameTa: "திருப்பூர்", arr: "20:58", dep: "21:00", distance: 444, day: 1, platform: "1", lat: 11.1085, lng: 77.3411 },
+      { code: "CBE", name: "Coimbatore Junction", nameTa: "கோயம்புத்தூர் சந்திப்பு", arr: "22:15", dep: "Destination", distance: 495, day: 1, platform: "3", lat: 11.0018, lng: 76.9628 }
+    ]
+  },
+
+  // 6. 22649 Yercaud Superfast Express (Chennai Central -> Salem)
+  {
+    trainNo: "22649",
+    name: "Yercaud Superfast Express",
+    nameTa: "ஏற்காடு அதிவிரைவு வண்டி",
+    type: "Superfast Express",
+    direction: "MAS_TO_SA",
+    directionLabel: "Chennai ➔ Salem",
+    directionLabelTa: "சென்னை ➔ சேலம்",
+    from: "MGR Chennai Central (MAS)",
+    fromTa: "சென்னை சென்ட்ரல் (MAS)",
+    to: "Salem / Erode (SA)",
+    toTa: "சேலம் சந்திப்பு (SA)",
+    departureTime: "23:00",
+    arrivalTime: "04:20",
+    runningDays: ["Daily"],
+    stations: [
+      { code: "MAS", name: "MGR Chennai Central", nameTa: "சென்னை சென்ட்ரல்", arr: "Source", dep: "23:00", distance: 0, day: 1, platform: "11", lat: 13.0827, lng: 80.2707 },
+      { code: "PER", name: "Perambur", nameTa: "பெரம்பூர்", arr: "23:13", dep: "23:15", distance: 5, day: 1, platform: "2", lat: 13.1075, lng: 80.2335 },
+      { code: "TRL", name: "Tiruvallur", nameTa: "திருவள்ளூர்", arr: "23:43", dep: "23:45", distance: 42, day: 1, platform: "2", lat: 13.1438, lng: 79.9080 },
+      { code: "AJJ", name: "Arakkonam Junction", nameTa: "அரக்கோணம் சந்திப்பு", arr: "00:08", dep: "00:10", distance: 69, day: 2, platform: "1", lat: 13.0784, lng: 79.6677 },
+      { code: "KPD", name: "Katpadi Junction", nameTa: "காட்பாடி சந்திப்பு", arr: "00:58", dep: "01:00", distance: 130, day: 2, platform: "1", lat: 12.9698, lng: 79.1352 },
+      { code: "JTJ", name: "Jolarpettai Junction", nameTa: "ஜோலார்பேட்டை சந்திப்பு", arr: "02:23", dep: "02:25", distance: 214, day: 2, platform: "1", lat: 12.5694, lng: 78.5830 },
+      { code: "TPT", name: "Tirupattur", nameTa: "திருப்பத்தூர்", arr: "02:34", dep: "02:35", distance: 222, day: 2, platform: "1", lat: 12.4930, lng: 78.5670 },
+      { code: "MAP", name: "Morappur", nameTa: "மொரப்பூர்", arr: "03:09", dep: "03:10", distance: 269, day: 2, platform: "2", lat: 12.0620, lng: 78.4350 },
+      { code: "BQI", name: "Bommidi", nameTa: "பொம்மிடி", arr: "03:34", dep: "03:35", distance: 292, day: 2, platform: "1", lat: 11.9050, lng: 78.2910 },
+      { code: "SA", name: "Salem Junction", nameTa: "சேலம் சந்திப்பு", arr: "04:17", dep: "04:20", distance: 334, day: 2, platform: "4", lat: 11.6643, lng: 78.1460 },
+      { code: "SGE", name: "Sankaridurg", nameTa: "சங்ககிரி", arr: "04:59", dep: "05:00", distance: 373, day: 2, platform: "1", lat: 11.4880, lng: 77.8760 },
+      { code: "ED", name: "Erode Junction", nameTa: "ஈரோடு சந்திப்பு", arr: "05:50", dep: "Destination", distance: 394, day: 2, platform: "3", lat: 11.3410, lng: 77.7172 }
+    ]
+  },
+
+  // 7. 22153 Chennai Egmore - Salem Superfast Express (Chennai Egmore -> Salem)
+  {
+    trainNo: "22153",
+    name: "Chennai Egmore - Salem SF Express",
+    nameTa: "சேலம் அதிவிரைவு வண்டி",
+    type: "Superfast Express",
+    direction: "MAS_TO_SA",
+    directionLabel: "Chennai ➔ Salem",
+    directionLabelTa: "சென்னை ➔ சேலம்",
+    from: "Chennai Egmore (MS)",
+    fromTa: "சென்னை எழும்பூர் (MS)",
+    to: "Salem Junction (SA)",
+    toTa: "சேலம் சந்திப்பு (SA)",
+    departureTime: "23:55",
+    arrivalTime: "06:45",
+    runningDays: ["Daily"],
+    stations: [
+      { code: "MS", name: "Chennai Egmore", nameTa: "சென்னை எழும்பூர்", arr: "Source", dep: "23:55", distance: 0, day: 1, platform: "8", lat: 13.0827, lng: 80.2608 },
+      { code: "TBM", name: "Tambaram", nameTa: "தாம்பரம்", arr: "00:23", dep: "00:25", distance: 25, day: 2, platform: "8", lat: 12.9249, lng: 80.1197 },
+      { code: "CGL", name: "Chengalpattu Junction", nameTa: "செங்கல்பட்டு சந்திப்பு", arr: "00:53", dep: "00:55", distance: 56, day: 2, platform: "6", lat: 12.6939, lng: 79.9757 },
+      { code: "MLMR", name: "Melmaruvathur", nameTa: "மேல்மருவத்தூர்", arr: "01:23", dep: "01:25", distance: 91, day: 2, platform: "2", lat: 12.4332, lng: 79.8290 },
+      { code: "VM", name: "Villupuram Junction", nameTa: "விழுப்புரம் சந்திப்பு", arr: "02:40", dep: "02:45", distance: 159, day: 2, platform: "1", lat: 11.9398, lng: 79.4947 },
+      { code: "VRI", name: "Vriddhachalam Junction", nameTa: "விருத்தாசலம் சந்திப்பு", arr: "03:30", dep: "03:35", distance: 213, day: 2, platform: "3", lat: 11.5306, lng: 79.3248 },
+      { code: "CHSM", name: "Chinna Salem", nameTa: "சின்னசேலம்", arr: "04:29", dep: "04:30", distance: 294, day: 2, platform: "1", lat: 11.6510, lng: 78.8870 },
+      { code: "ATU", name: "Attur", nameTa: "ஆத்தூர்", arr: "04:54", dep: "04:55", distance: 326, day: 2, platform: "1", lat: 11.5970, lng: 78.6010 },
+      { code: "VGE", name: "Valappadi G Hlt", nameTa: "வாழப்பாடி", arr: "05:14", dep: "05:15", distance: 357, day: 2, platform: "1", lat: 11.6530, lng: 78.4120 },
+      { code: "APN", name: "Ayodhyapattanam", nameTa: "அயோத்தியாபட்டணம்", arr: "05:39", dep: "05:40", distance: 384, day: 2, platform: "1", lat: 11.6780, lng: 78.2390 },
+      { code: "SXT", name: "Salem Town", nameTa: "சேலம் டவுன்", arr: "05:54", dep: "05:55", distance: 390, day: 2, platform: "1", lat: 11.6560, lng: 78.1680 },
+      { code: "SA", name: "Salem Junction", nameTa: "சேலம் சந்திப்பு", arr: "06:45", dep: "Destination", distance: 396, day: 2, platform: "1", lat: 11.6643, lng: 78.1460 }
+    ]
+  },
+
+  // 8. 22154 Salem - Chennai Egmore Superfast Express (Salem -> Chennai Egmore)
+  {
+    trainNo: "22154",
+    name: "Salem - Chennai Egmore SF Express",
+    nameTa: "சேலம் அதிவிரைவு வண்டி",
+    type: "Superfast Express",
+    direction: "SA_TO_MAS",
+    directionLabel: "Salem ➔ Chennai",
+    directionLabelTa: "சேலம் ➔ சென்னை",
+    from: "Salem Junction (SA)",
+    fromTa: "சேலம் சந்திப்பு (SA)",
+    to: "Chennai Egmore (MS)",
+    toTa: "சென்னை எழும்பூர் (MS)",
+    departureTime: "21:30",
+    arrivalTime: "03:50",
+    runningDays: ["Daily"],
+    stations: [
+      { code: "SA", name: "Salem Junction", nameTa: "சேலம் சந்திப்பு", arr: "Source", dep: "21:30", distance: 0, day: 1, platform: "1", lat: 11.6643, lng: 78.1460 },
+      { code: "SXT", name: "Salem Town", nameTa: "சேலம் டவுன்", arr: "21:39", dep: "21:40", distance: 6, day: 1, platform: "1", lat: 11.6560, lng: 78.1680 },
+      { code: "APN", name: "Ayodhyapattanam", nameTa: "அயோத்தியாபட்டணம்", arr: "21:49", dep: "21:50", distance: 12, day: 1, platform: "1", lat: 11.6780, lng: 78.2390 },
+      { code: "VGE", name: "Valappadi G Hlt", nameTa: "வாழப்பாடி", arr: "22:09", dep: "22:10", distance: 39, day: 1, platform: "1", lat: 11.6530, lng: 78.4120 },
+      { code: "ATU", name: "Attur", nameTa: "ஆத்தூர்", arr: "22:29", dep: "22:30", distance: 70, day: 1, platform: "1", lat: 11.5970, lng: 78.6010 },
+      { code: "CHSM", name: "Chinna Salem", nameTa: "சின்னசேலம்", arr: "22:54", dep: "22:55", distance: 102, day: 1, platform: "1", lat: 11.6510, lng: 78.8870 },
+      { code: "VRI", name: "Vriddhachalam Junction", nameTa: "விருத்தாசலம் சந்திப்பு", arr: "00:05", dep: "00:10", distance: 183, day: 2, platform: "3", lat: 11.5306, lng: 79.3248 },
+      { code: "VM", name: "Villupuram Junction", nameTa: "விழுப்புரம் சந்திப்பு", arr: "01:05", dep: "01:10", distance: 237, day: 2, platform: "1", lat: 11.9398, lng: 79.4947 },
+      { code: "CGL", name: "Chengalpattu Junction", nameTa: "செங்கல்பட்டு சந்திப்பு", arr: "02:33", dep: "02:35", distance: 340, day: 2, platform: "5", lat: 12.6939, lng: 79.9757 },
+      { code: "TBM", name: "Tambaram", nameTa: "தாம்பரம்", arr: "03:03", dep: "03:05", distance: 371, day: 2, platform: "6", lat: 12.9249, lng: 80.1197 },
+      { code: "MBM", name: "Mambalam", nameTa: "மாம்பலம்", arr: "03:23", dep: "03:25", distance: 388, day: 2, platform: "3", lat: 13.0336, lng: 80.2297 },
+      { code: "MS", name: "Chennai Egmore", nameTa: "சென்னை எழும்பூர்", arr: "03:50", dep: "Destination", distance: 396, day: 2, platform: "4", lat: 13.0827, lng: 80.2608 }
+    ]
+  },
+
+  // 9. 12674 Cheran Superfast Express (Salem -> Chennai Central)
   {
     trainNo: "12674",
     name: "Cheran Superfast Express",
     nameTa: "சேரன் அதிவிரைவு வண்டி",
     type: "Superfast Express",
-    from: "Coimbatore Junction (CBE)",
-    fromTa: "கோயம்புத்தூர் சந்திப்பு",
+    direction: "SA_TO_MAS",
+    directionLabel: "Salem ➔ Chennai",
+    directionLabelTa: "சேலம் ➔ சென்னை",
+    from: "Salem Junction (SA)",
+    fromTa: "சேலம் சந்திப்பு (SA)",
     to: "MGR Chennai Central (MAS)",
-    toTa: "சென்னை சென்ட்ரல்",
-    departureTime: "22:50",
+    toTa: "சென்னை சென்ட்ரல் (MAS)",
+    departureTime: "01:30",
     arrivalTime: "07:00",
     runningDays: ["Daily"],
     stations: [
@@ -293,6 +286,86 @@ export const TRAINS_DATA = [
       { code: "PER", name: "Perambur", nameTa: "பெரம்பூர்", arr: "06:18", dep: "06:20", distance: 490, day: 2, platform: "1", lat: 13.1075, lng: 80.2335 },
       { code: "MAS", name: "MGR Chennai Central", nameTa: "சென்னை சென்ட்ரல்", arr: "07:00", dep: "Destination", distance: 495, day: 2, platform: "10", lat: 13.0827, lng: 80.2707 }
     ]
+  },
+
+  // 10. 12673 Cheran Superfast Express (Chennai Central -> Salem)
+  {
+    trainNo: "12673",
+    name: "Cheran Superfast Express",
+    nameTa: "சேரன் அதிவிரைவு வண்டி",
+    type: "Superfast Express",
+    direction: "MAS_TO_SA",
+    directionLabel: "Chennai ➔ Salem",
+    directionLabelTa: "சென்னை ➔ சேலம்",
+    from: "MGR Chennai Central (MAS)",
+    fromTa: "சென்னை சென்ட்ரல் (MAS)",
+    to: "Salem / Coimbatore (SA)",
+    toTa: "சேலம் சந்திப்பு (SA)",
+    departureTime: "22:00",
+    arrivalTime: "02:35",
+    runningDays: ["Daily"],
+    stations: [
+      { code: "MAS", name: "MGR Chennai Central", nameTa: "சென்னை சென்ட்ரல்", arr: "Source", dep: "22:00", distance: 0, day: 1, platform: "9", lat: 13.0827, lng: 80.2707 },
+      { code: "AJJ", name: "Arakkonam Junction", nameTa: "அரக்கோணம் சந்திப்பு", arr: "22:58", dep: "23:00", distance: 69, day: 1, platform: "1", lat: 13.0784, lng: 79.6677 },
+      { code: "KPD", name: "Katpadi Junction", nameTa: "காட்பாடி சந்திப்பு", arr: "23:48", dep: "23:50", distance: 130, day: 1, platform: "1", lat: 12.9698, lng: 79.1352 },
+      { code: "JTJ", name: "Jolarpettai Junction", nameTa: "ஜோலார்பேட்டை சந்திப்பு", arr: "01:08", dep: "01:10", distance: 214, day: 2, platform: "1", lat: 12.5694, lng: 78.5830 },
+      { code: "SA", name: "Salem Junction", nameTa: "சேலம் சந்திப்பு", arr: "02:32", dep: "02:35", distance: 334, day: 2, platform: "4", lat: 11.6643, lng: 78.1460 },
+      { code: "ED", name: "Erode Junction", nameTa: "ஈரோடு சந்திப்பு", arr: "03:35", dep: "03:40", distance: 394, day: 2, platform: "2", lat: 11.3410, lng: 77.7172 },
+      { code: "TUP", name: "Tiruppur", nameTa: "திருப்பூர்", arr: "04:23", dep: "04:25", distance: 444, day: 2, platform: "1", lat: 11.1085, lng: 77.3411 },
+      { code: "CBE", name: "Coimbatore Junction", nameTa: "கோயம்புத்தூர் சந்திப்பு", arr: "05:30", dep: "Destination", distance: 495, day: 2, platform: "3", lat: 11.0018, lng: 76.9628 }
+    ]
+  },
+
+  // 11. 20644 Coimbatore - Chennai Central Vande Bharat Express (Salem -> Chennai Central)
+  {
+    trainNo: "20644",
+    name: "Coimbatore - Chennai Vande Bharat",
+    nameTa: "வந்தே பாரத் அதிவிரைவு",
+    type: "Vande Bharat Express",
+    direction: "SA_TO_MAS",
+    directionLabel: "Salem ➔ Chennai",
+    directionLabelTa: "சேலம் ➔ சென்னை",
+    from: "Salem Junction (SA)",
+    fromTa: "சேலம் சந்திப்பு (SA)",
+    to: "MGR Chennai Central (MAS)",
+    toTa: "சென்னை சென்ட்ரல் (MAS)",
+    departureTime: "08:00",
+    arrivalTime: "11:50",
+    runningDays: ["Mon", "Tue", "Thu", "Fri", "Sat", "Sun"],
+    stations: [
+      { code: "CBE", name: "Coimbatore Junction", nameTa: "கோயம்புத்தூர் சந்திப்பு", arr: "Source", dep: "06:00", distance: 0, day: 1, platform: "1", lat: 11.0018, lng: 76.9628 },
+      { code: "TUP", name: "Tiruppur", nameTa: "திருப்பூர்", arr: "06:35", dep: "06:37", distance: 50, day: 1, platform: "2", lat: 11.1085, lng: 77.3411 },
+      { code: "ED", name: "Erode Junction", nameTa: "ஈரோடு சந்திப்பு", arr: "07:12", dep: "07:15", distance: 101, day: 1, platform: "1", lat: 11.3410, lng: 77.7172 },
+      { code: "SA", name: "Salem Junction", nameTa: "சேலம் சந்திப்பு", arr: "07:58", dep: "08:00", distance: 160, day: 1, platform: "4", lat: 11.6643, lng: 78.1460 },
+      { code: "JTJ", name: "Jolarpettai Junction", nameTa: "ஜோலார்பேட்டை சந்திப்பு", arr: "09:08", dep: "09:10", distance: 281, day: 1, platform: "3", lat: 12.5694, lng: 78.5830 },
+      { code: "MAS", name: "MGR Chennai Central", nameTa: "சென்னை சென்ட்ரல்", arr: "11:50", dep: "Destination", distance: 495, day: 1, platform: "2", lat: 13.0827, lng: 80.2707 }
+    ]
+  },
+
+  // 12. 20643 Chennai Central - Coimbatore Vande Bharat Express (Chennai Central -> Salem)
+  {
+    trainNo: "20643",
+    name: "Chennai - Coimbatore Vande Bharat",
+    nameTa: "வந்தே பாரத் அதிவிரைவு",
+    type: "Vande Bharat Express",
+    direction: "MAS_TO_SA",
+    directionLabel: "Chennai ➔ Salem",
+    directionLabelTa: "சென்னை ➔ சேலம்",
+    from: "MGR Chennai Central (MAS)",
+    fromTa: "சென்னை சென்ட்ரல் (MAS)",
+    to: "Salem Junction (SA)",
+    toTa: "சேலம் சந்திப்பு (SA)",
+    departureTime: "14:15",
+    arrivalTime: "17:50",
+    runningDays: ["Mon", "Tue", "Thu", "Fri", "Sat", "Sun"],
+    stations: [
+      { code: "MAS", name: "MGR Chennai Central", nameTa: "சென்னை சென்ட்ரல்", arr: "Source", dep: "14:15", distance: 0, day: 1, platform: "2", lat: 13.0827, lng: 80.2707 },
+      { code: "JTJ", name: "Jolarpettai Junction", nameTa: "ஜோலார்பேட்டை சந்திப்பு", arr: "16:38", dep: "16:40", distance: 214, day: 1, platform: "1", lat: 12.5694, lng: 78.5830 },
+      { code: "SA", name: "Salem Junction", nameTa: "சேலம் சந்திப்பு", arr: "17:48", dep: "17:50", distance: 334, day: 1, platform: "4", lat: 11.6643, lng: 78.1460 },
+      { code: "ED", name: "Erode Junction", nameTa: "ஈரோடு சந்திப்பு", arr: "18:32", dep: "18:35", distance: 394, day: 1, platform: "2", lat: 11.3410, lng: 77.7172 },
+      { code: "TUP", name: "Tiruppur", nameTa: "திருப்பூர்", arr: "19:13", dep: "19:15", distance: 444, day: 1, platform: "1", lat: 11.1085, lng: 77.3411 },
+      { code: "CBE", name: "Coimbatore Junction", nameTa: "கோயம்புத்தூர் சந்திப்பு", arr: "20:15", dep: "Destination", distance: 495, day: 1, platform: "1", lat: 11.0018, lng: 76.9628 }
+    ]
   }
 ];
 
@@ -305,35 +378,38 @@ export function findTrain(query) {
   const byNo = TRAINS_DATA.find(t => t.trainNo === clean);
   if (byNo) return byNo;
 
-  // Name or Tamil name or station match
+  // Partial match by name or Tamil name
   return TRAINS_DATA.find(t => 
     t.name.toLowerCase().includes(clean) ||
     t.nameTa.toLowerCase().includes(clean) ||
-    t.trainNo.includes(clean) ||
-    t.from.toLowerCase().includes(clean) ||
-    t.to.toLowerCase().includes(clean)
+    t.trainNo.includes(clean)
   );
 }
 
-// Generate fallback / mock train for any unlisted 5-digit number
+// Generate generic train for any unlisted 5-digit number
 export function createGenericTrain(trainNo) {
   return {
     trainNo: trainNo,
     name: `Express Train (${trainNo})`,
     nameTa: `விரைவு ரயில் (${trainNo})`,
     type: "Express",
-    from: "Origin Station",
-    fromTa: "புறப்படும் நிலையம்",
-    to: "Destination Station",
-    toTa: "சேரும் நிலையம்",
+    direction: "SA_TO_MAS",
+    directionLabel: "Salem ➔ Chennai",
+    directionLabelTa: "சேலம் ➔ சென்னை",
+    from: "Salem Junction (SA)",
+    fromTa: "சேலம் சந்திப்பு (SA)",
+    to: "Chennai Central (MAS)",
+    toTa: "சென்னை சென்ட்ரல் (MAS)",
     departureTime: "06:00",
-    arrivalTime: "18:00",
+    arrivalTime: "11:30",
     runningDays: ["Daily"],
     stations: [
-      { code: "STN1", name: "Origin Station", nameTa: "புறப்படும் நிலையம்", arr: "Source", dep: "06:00", distance: 0, day: 1, platform: "1", lat: 13.0827, lng: 80.2608 },
-      { code: "STN2", name: "Transit Station A", nameTa: "இடைப்பட்ட நிலையம் 1", arr: "09:30", dep: "09:35", distance: 180, day: 1, platform: "2", lat: 11.9398, lng: 79.4947 },
-      { code: "STN3", name: "Transit Station B", nameTa: "இடைப்பட்ட நிலையம் 2", arr: "13:15", dep: "13:20", distance: 350, day: 1, platform: "3", lat: 10.7937, lng: 78.6833 },
-      { code: "STN4", name: "Destination Station", nameTa: "சேரும் நிலையம்", arr: "18:00", dep: "Destination", distance: 550, day: 1, platform: "1", lat: 9.9178, lng: 78.1130 }
+      { code: "SA", name: "Salem Junction", nameTa: "சேலம் சந்திப்பு", arr: "Source", dep: "06:00", distance: 0, day: 1, platform: "4", lat: 11.6643, lng: 78.1460 },
+      { code: "MAP", name: "Morappur", nameTa: "மொரப்பூர்", arr: "06:54", dep: "06:55", distance: 66, day: 1, platform: "2", lat: 12.0620, lng: 78.4350 },
+      { code: "JTJ", name: "Jolarpettai Junction", nameTa: "ஜோலார்பேட்டை சந்திப்பு", arr: "07:58", dep: "08:00", distance: 121, day: 1, platform: "3", lat: 12.5694, lng: 78.5830 },
+      { code: "KPD", name: "Katpadi Junction", nameTa: "காட்பாடி சந்திப்பு", arr: "09:08", dep: "09:10", distance: 205, day: 1, platform: "2", lat: 12.9698, lng: 79.1352 },
+      { code: "AJJ", name: "Arakkonam Junction", nameTa: "அரக்கோணம் சந்திப்பு", arr: "09:58", dep: "10:00", distance: 266, day: 1, platform: "2", lat: 13.0784, lng: 79.6677 },
+      { code: "MAS", name: "MGR Chennai Central", nameTa: "சென்னை சென்ட்ரல்", arr: "11:30", dep: "Destination", distance: 334, day: 1, platform: "5", lat: 13.0827, lng: 80.2707 }
     ]
   };
 }

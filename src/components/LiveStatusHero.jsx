@@ -108,13 +108,22 @@ export function LiveStatusHero({
         {/* Top Header: Train Info & Live Status Badge */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
           <div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-wrap">
               <span className="px-3 py-1 rounded-lg bg-blue-100 text-blue-900 font-extrabold text-sm sm:text-base tracking-wider border border-blue-200">
                 {train.trainNo}
               </span>
               <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
                 {train.type}
               </span>
+              {train.directionLabel && (
+                <span className={`px-2.5 py-0.5 rounded-full text-xs font-bold border ${
+                  train.direction === "SA_TO_MAS"
+                    ? "bg-emerald-50 text-emerald-800 border-emerald-200"
+                    : "bg-blue-50 text-blue-800 border-blue-200"
+                }`}>
+                  {lang === "ta" ? train.directionLabelTa : train.directionLabel}
+                </span>
+              )}
             </div>
             <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 mt-1">
               {lang === "ta" ? train.nameTa : train.name}

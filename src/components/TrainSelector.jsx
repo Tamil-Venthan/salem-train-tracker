@@ -1,15 +1,22 @@
-import React, { useState } from "react";
-import { Search, X, TrainTrack } from "lucide-react";
+import React, { useState, useMemo } from "react";
+import { Search, X, TrainTrack, ArrowRight } from "lucide-react";
 import { TRAINS_DATA } from "../data/trains";
 
 export function TrainSelector({ currentTrain, onSelectTrain, lang, t }) {
   const [searchInput, setSearchInput] = useState("");
+  const [directionFilter, setDirectionFilter] = useState("ALL"); // 'ALL' | 'SA_TO_MAS' | 'MAS_TO_SA'
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     if (!searchInput.trim()) return;
     onSelectTrain(searchInput.trim());
   };
+
+  // Filter trains according to chosen direction
+  const filteredTrains = useMemo(() => {
+    if (directionFilter === "ALL") return TRAINS_DATA;
+    return TRAINS_DATA.filter((tr) => tr.direction === directionFilter);
+  }, [directionFilter]);
 
   return (
     <section className="bg-white border-b border-slate-200 px-4 py-3.5 shadow-xs">
@@ -44,38 +51,101 @@ export function TrainSelector({ currentTrain, onSelectTrain, lang, t }) {
           </button>
         </form>
 
-        {/* Quick Selection Chips - Mobile Touch Friendly */}
-        <div className="space-y-1.5">
-          <div className="flex items-center justify-between text-xs text-slate-500 font-medium">
-            <span className="flex items-center gap-1">
-              <TrainTrack className="w-3.5 h-3.5 text-blue-600" />
-              {t.popular_trains}
-            </span>
-          </div>
+        {/* Direction Filter Tabs for Amma */}
+        <div className="flex items-center justify-between gap-2 pt-1 flex-wrap">
+          <span className="flex items-center gap-1 text-xs font-bold text-slate-600">
+            <TrainTrack className="w-3.5 h-3.5 text-blue-600" />
+            <span>{t.popular_trains}</span>
+          </span>
 
-          <div className="flex gap-2 overflow-x-auto pb-1 pt-0.5 no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
-            {TRAINS_DATA.map((tr) => {
-              const isSelected = currentTrain?.trainNo === tr.trainNo;
-              return (
-                <button
-                  key={tr.trainNo}
-                  onClick={() => {
-                    setSearchInput("");
-                    onSelectTrain(tr.trainNo);
-                  }}
-                  className={`shrink-0 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border flex items-center gap-2 active:scale-95 cursor-pointer ${
-                    isSelected
-                      ? "bg-blue-900 text-white border-blue-900 shadow-sm ring-2 ring-blue-600/30"
-                      : "bg-slate-100 hover:bg-blue-50 text-slate-700 hover:text-blue-800 border-slate-200"
-                  }`}
-                >
-                  <span className={`w-2 h-2 rounded-full ${isSelected ? "bg-yellow-400" : "bg-blue-500"}`} />
-                  <span className="font-bold text-yellow-500">{tr.trainNo}</span>
-                  <span>{lang === "ta" ? tr.nameTa.split(" ")[0] : tr.name.split(" ")[0]}</span>
-                </button>
-              );
-            })}
+          {/* Direction toggles */}
+          <div className="flex gap-1 bg-slate-100 p-0.5 rounded-xl border border-slate-200">
+            <button
+              onClick={() => setDirectionFilter("ALL")}
+              className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                directionFilter === "ALL"
+                  ? "bg-white text-blue-900 shadow-xs"
+                  : "text-slate-600 hover:text-slate-900"
+              }`}
+            >
+              {t.all_routes}
+            </button>
+            <button
+              onClick={() => setDirectionFilter("SA_TO_MAS")}
+              className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center gap-1 ${
+                directionFilter === "SA_TO_MAS"
+                  ? "bg-emerald-600 text-white shadow-xs"
+                  : "text-emerald-800 hover:text-emerald-950"
+              }`}
+            >
+              <span>{t.salem_to_chennai}</span>
+            </button>
+            <button
+              onClick={() => setDirectionFilter("MAS_TO_SA")}
+              className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center gap-1 ${
+                directionFilter === "MAS_TO_SA"
+                  ? "bg-blue-600 text-white shadow-xs"
+                  : "text-blue-800 hover:text-blue-950"
+              }`}
+            >
+              <span>{t.chennai_to_salem}</span>
+            </button>
           </div>
+        </div>
+
+        {/* One-Tap Train Selection Chips (Horizontal Touch Scroll) */}
+        <div className="flex gap-2 overflow-x-auto pb-1.5 pt-0.5 no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
+          {filteredTrains.map((tr) => {
+            const isSelected = currentTrain?.trainNo === tr.trainNo;
+            const isSalemToChennai = tr.direction === "SA_TO_MAS";
+
+            return (
+              <button
+                key={tr.trainNo}
+                onClick={() => {
+                  setSearchInput("");
+                  onSelectTrain(tr.trainNo);
+                }}
+                className={`shrink-0 px-3.5 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold transition-all border flex flex-col items-start gap-1 active:scale-95 cursor-pointer text-left ${
+                  isSelected
+                    ? "bg-blue-900 text-white border-blue-900 shadow-md ring-2 ring-blue-500/40"
+                    : "bg-slate-50 hover:bg-blue-50 text-slate-800 hover:text-blue-900 border-slate-200"
+                }`}
+              >
+                <div className="flex items-center gap-1.5 w-full">
+                  <span
+                    className={`font-black tracking-wide text-xs px-1.5 py-0.5 rounded-md ${
+                      isSelected
+                        ? "bg-yellow-400 text-blue-950"
+                        : "bg-blue-100 text-blue-800"
+                    }`}
+                  >
+                    {tr.trainNo}
+                  </span>
+                  <span className="font-bold text-xs truncate max-w-[130px]">
+                    {lang === "ta" ? tr.nameTa : tr.name}
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-1 text-[11px] font-medium opacity-85">
+                  <span
+                    className={`px-1.5 py-0.2 rounded-sm text-[10px] font-bold ${
+                      isSalemToChennai
+                        ? isSelected
+                          ? "bg-emerald-500 text-white"
+                          : "bg-emerald-100 text-emerald-800"
+                        : isSelected
+                        ? "bg-blue-500 text-white"
+                        : "bg-blue-100 text-blue-800"
+                    }`}
+                  >
+                    {lang === "ta" ? tr.directionLabelTa : tr.directionLabel}
+                  </span>
+                  <span>• {tr.departureTime}</span>
+                </div>
+              </button>
+            );
+          })}
         </div>
       </div>
     </section>

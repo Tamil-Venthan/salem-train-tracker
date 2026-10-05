@@ -15,7 +15,7 @@ export function App() {
   const queryParams = useMemo(() => new URLSearchParams(window.location.search), []);
 
   const initialLang = queryParams.get("lang") === "en" ? "en" : "ta";
-  const initialTrainNo = queryParams.get("train") || "12636"; // Default: Vaigai Express
+  const initialTrainNo = queryParams.get("train") || "12676"; // Default: 12676 Kovai SF Exp
 
   const [lang, setLang] = useState(initialLang);
   const [currentTrain, setCurrentTrain] = useState(() => {
