@@ -752,6 +752,65 @@ export const TRAINS_DATA = [
       { code: "TUP", name: "Tiruppur", nameTa: "திருப்பூர்", arr: "13:30", dep: "13:32", distance: 444, day: 1, platform: "1", lat: 11.1085, lng: 77.3411 },
       { code: "CBE", name: "Coimbatore Junction", nameTa: "கோயம்புத்தூர் சந்திப்பு", arr: "14:15", dep: "Destination", distance: 495, day: 1, platform: "4", lat: 11.0018, lng: 76.9628 }
     ]
+  },
+
+  // 27. 06027 Podanur Special Fare Special (Chennai Central -> Salem / Podanur)
+  {
+    trainNo: "06027",
+    name: "Podanur Special Fare Special",
+    nameTa: "போத்தனூர் சிறப்பு கட்டண சிறப்பு ரயில்",
+    type: "Special Fare Special",
+    direction: "MAS_TO_SA",
+    directionLabel: "Chennai ➔ Salem",
+    directionLabelTa: "சென்னை ➔ சேலம்",
+    from: "MGR Chennai Central (MAS)",
+    fromTa: "சென்னை சென்ட்ரல் (MAS)",
+    to: "Salem Junction (SA)",
+    toTa: "சேலம் சந்திப்பு (SA)",
+    departureTime: "17:45",
+    arrivalTime: "23:07",
+    runningDays: ["Fri", "Sat", "Sun"],
+    stations: [
+      { code: "MAS", name: "MGR Chennai Central", nameTa: "சென்னை சென்ட்ரல்", arr: "Source", dep: "17:45", distance: 0, day: 1, platform: "8", lat: 13.0827, lng: 80.2707 },
+      { code: "AJJ", name: "Arakkonam Junction", nameTa: "அரக்கோணம் சந்திப்பு", arr: "18:43", dep: "18:45", distance: 69, day: 1, platform: "1", lat: 13.0784, lng: 79.6677 },
+      { code: "KPD", name: "Katpadi Junction", nameTa: "காட்பாடி சந்திப்பு", arr: "19:48", dep: "19:50", distance: 130, day: 1, platform: "1", lat: 12.9698, lng: 79.1352 },
+      { code: "JTJ", name: "Jolarpettai Junction", nameTa: "ஜோலார்பேட்டை சந்திப்பு", arr: "21:20", dep: "21:25", distance: 214, day: 1, platform: "1", lat: 12.5694, lng: 78.5830 },
+      { code: "MAP", name: "Morappur", nameTa: "மொரப்பூர்", arr: "22:05", dep: "22:07", distance: 269, day: 1, platform: "2", lat: 12.0620, lng: 78.4350 },
+      { code: "SA", name: "Salem Junction", nameTa: "சேலம் சந்திப்பு", arr: "23:07", dep: "23:10", distance: 334, day: 1, platform: "4", lat: 11.6643, lng: 78.1460 },
+      { code: "ED", name: "Erode Junction", nameTa: "ஈரோடு சந்திப்பு", arr: "00:05", dep: "00:10", distance: 394, day: 2, platform: "2", lat: 11.3410, lng: 77.7172 },
+      { code: "TUP", name: "Tiruppur", nameTa: "திருப்பூர்", arr: "00:53", dep: "00:55", distance: 444, day: 2, platform: "1", lat: 11.1085, lng: 77.3411 },
+      { code: "PTJ", name: "Podanur Junction", nameTa: "போத்தனூர் சந்திப்பு", arr: "03:00", dep: "Destination", distance: 490, day: 2, platform: "3", lat: 10.9667, lng: 76.9667 }
+    ]
+  },
+
+  // 28. 06028 Podanur - Chennai Central Special Fare Special (Salem -> Chennai Central)
+  {
+    trainNo: "06028",
+    name: "Podanur - Chennai Central Special",
+    nameTa: "போத்தனூர் - சென்னை சிறப்பு ரயில்",
+    type: "Special Fare Special",
+    direction: "SA_TO_MAS",
+    directionLabel: "Salem ➔ Chennai",
+    directionLabelTa: "சேலம் ➔ சென்னை",
+    from: "Salem Junction (SA)",
+    fromTa: "சேலம் சந்திப்பு (SA)",
+    to: "MGR Chennai Central (MAS)",
+    toTa: "சென்னை சென்ட்ரல் (MAS)",
+    departureTime: "11:05",
+    arrivalTime: "16:45",
+    runningDays: ["Fri", "Sat", "Sun"],
+    stations: [
+      { code: "PTJ", name: "Podanur Junction", nameTa: "போத்தனூர் சந்திப்பு", arr: "Source", dep: "07:40", distance: 0, day: 1, platform: "1", lat: 10.9667, lng: 76.9667 },
+      { code: "TUP", name: "Tiruppur", nameTa: "திருப்பூர்", arr: "08:28", dep: "08:30", distance: 44, day: 1, platform: "1", lat: 11.1085, lng: 77.3411 },
+      { code: "ED", name: "Erode Junction", nameTa: "ஈரோடு சந்திப்பு", arr: "09:20", dep: "09:25", distance: 94, day: 1, platform: "1", lat: 11.3410, lng: 77.7172 },
+      { code: "SA", name: "Salem Junction", nameTa: "சேலம் சந்திப்பு", arr: "11:00", dep: "11:05", distance: 154, day: 1, platform: "3", lat: 11.6643, lng: 78.1460 },
+      { code: "MAP", name: "Morappur", nameTa: "மொரப்பூர்", arr: "12:00", dep: "12:02", distance: 220, day: 1, platform: "2", lat: 12.0620, lng: 78.4350 },
+      { code: "JTJ", name: "Jolarpettai Junction", nameTa: "ஜோலார்பேட்டை சந்திப்பு", arr: "13:00", dep: "13:05", distance: 275, day: 1, platform: "2", lat: 12.5694, lng: 78.5830 },
+      { code: "KPD", name: "Katpadi Junction", nameTa: "காட்பாடி சந்திப்பு", arr: "14:18", dep: "14:20", distance: 359, day: 1, platform: "2", lat: 12.9698, lng: 79.1352 },
+      { code: "AJJ", name: "Arakkonam Junction", nameTa: "அரக்கோணம் சந்திப்பு", arr: "15:10", dep: "15:12", distance: 420, day: 1, platform: "2", lat: 13.0784, lng: 79.6677 },
+      { code: "PER", name: "Perambur", nameTa: "பெரம்பூர்", arr: "16:03", dep: "16:05", distance: 484, day: 1, platform: "1", lat: 13.1075, lng: 80.2335 },
+      { code: "MAS", name: "MGR Chennai Central", nameTa: "சென்னை சென்ட்ரல்", arr: "16:45", dep: "Destination", distance: 490, day: 1, platform: "7", lat: 13.0827, lng: 80.2707 }
+    ]
   }
 ];
 
